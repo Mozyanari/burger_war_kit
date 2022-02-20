@@ -218,6 +218,11 @@ cp -r "${HOME}/.gazebo/log" "${TEST_LOG_DIR}/gazebo"
 cp -r "${HOME}/catkin_ws/src/burger_war_kit/judge/log" "${TEST_LOG_DIR}/judge"
 tar czvf "${LOG_ROOT_DIR}/${LOG_ARHCIVE_NAME}.tgz" -C "${LOG_ROOT_DIR}" ./test
 
+# ログ削除
+rm -f ${HOME}/.ros/log/* 
+rm -f ${HOME}/.gazebo/log/* 
+rm -f ${HOME}/catkin_ws/src/burger_war_kit/judge/log/*
+
 # 終了時のメッセージを出力
 RESULT_MESSAGE="\e[32mPASSED.\e[m"
 if [ ${TEST_RESULT} -ne 0 ]; then
